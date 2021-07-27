@@ -6,7 +6,7 @@ async function handleRequest(request: Request) {
     const response = await fetch(js);
     return new Response(response.body, {
       headers: {
-        "content-type": "text/javascript; charset=utf-8",
+        "content-type": "application/javascript; charset=utf-8",
       },
     });
   }
