@@ -8,9 +8,11 @@ async function handleRequest(request: Request) {
 
   const index = new URL("public/index.html", import.meta.url);
   const response = await fetch(index);
-  const headers = new Headers(response.headers);
-  headers.set("content-type", "text/html; charset=utf-8");
-  return new Response(response.body, { ...response, headers });
+  return new Response(response.body, {
+    headers: {
+      "content-type": "text/html; charset=utf-8",
+    },
+  });
 }
 
 addEventListener("fetch", (event: FetchEvent) => {
