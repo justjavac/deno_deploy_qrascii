@@ -4,7 +4,7 @@
 
 ## Preview
 
-![qr-ascii-hello-justjavac](./public/qrcode-ascii.png)
+[![qr-ascii-hello-justjavac](./public/qrcode-ascii.png)](https://qrascii.deno.dev)
 
 ## License
 
