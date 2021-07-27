@@ -3,7 +3,12 @@ async function handleRequest(request: Request) {
 
   if (pathname.startsWith("/app.js")) {
     const js = new URL("public/app.js", import.meta.url);
-    return fetch(js);
+    const response = await fetch(js);
+    return new Response(response.body, {
+      headers: {
+        "content-type": "text/javascript; charset=utf-8",
+      },
+    });
   }
 
   const index = new URL("public/index.html", import.meta.url);
