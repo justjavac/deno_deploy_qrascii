@@ -1,17 +1,4 @@
-async function handleRequest(request: Request) {
-  const { pathname } = new URL(request.url);
-
-  if (pathname.startsWith("/app.js")) {
-    const js = new URL("public/app.js", import.meta.url);
-    const response = await fetch(js);
-    return new Response(response.body, {
-      headers: {
-        "content-type": "application/javascript; charset=utf-8",
-        "access-control-allow-origin": "*",
-      },
-    });
-  }
-
+async function handleRequest() {
   const index = new URL("public/index.html", import.meta.url);
   const response = await fetch(index);
   return new Response(response.body, {
@@ -22,5 +9,5 @@ async function handleRequest(request: Request) {
 }
 
 addEventListener("fetch", (event: FetchEvent) => {
-  event.respondWith(handleRequest(event.request));
+  event.respondWith(handleRequest());
 });
