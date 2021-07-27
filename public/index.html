@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QR codes with ascii</title>
+  <link href="https://cdn.bootcdn.net/ajax/libs/Primer/15.1.0/primer.min.css" rel="stylesheet" />
+  <style>
+    .octicon-check {
+      display: none;
+    }
+    .markdown-body pre {
+      background-color: #1d1d1d;
+      color: white;
+      font-size: 10px;
+      line-height: 1.12;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-lg">
+    <h1>QR codes with ascii</h1>
+
+    <div class="col-md-12">
+      <div class="Box box-shadow">
+        <div class="Box-body">
+          <form id="form" autocomplete="off">
+            <label for="text">文本：</label>
+            <input id="text" class="form-control input-hide-webkit-autofill" required />
+
+            <label for="ch">字符：</label>
+            <select id="ch" class="form-select">
+              <option>M</option>
+              <option>X</option>
+              <option>Z</option>
+              <option>█</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary">生成</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 my-2">
+      <div class="Box box-shadow">
+        <div class="Box-body markdown-body">
+          <pre><code id="result"></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/app.js"></script>
+</body>
+
+</html>
