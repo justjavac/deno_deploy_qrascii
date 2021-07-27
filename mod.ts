@@ -16,6 +16,7 @@ async function handleRequest(request: Request) {
   return new Response(response.body, {
     headers: {
       "content-type": "text/html; charset=utf-8",
+      "access-control-allow-origin": "*",
     },
   });
 }
